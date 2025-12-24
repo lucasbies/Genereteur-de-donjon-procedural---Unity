@@ -1,4 +1,4 @@
-### 🧱 Procedural Dungeon Generator – Unity
+#### 🧱 Procedural Dungeon Generator – Unity
 ## 📌 Description
 
 Ce projet est un générateur procédural de donjons réalisé avec Unity et C#.
@@ -6,8 +6,8 @@ Il permet de générer dynamiquement un donjon composé de salles connectées pa
 
 Le projet a été conçu comme un outil de génération plutôt qu’un jeu final.
 
-🎮 Fonctionnalités principales
-🏗️ Génération procédurale
+## 🎮 Fonctionnalités principales
+# 🏗️ Génération procédurale
 
 Placement de salles à partir de portes disponibles
 
@@ -21,7 +21,7 @@ Salle de départ et salle de fin
 
 Réactivation automatique des murs sur les portes inutilisées
 
-🎨 Visuel & structure
+# 🎨 Visuel & structure
 
 Couleurs différentes pour distinguer les types de salles
 
@@ -31,7 +31,7 @@ Visualisation des Bounding Boxes via OnDrawGizmosSelected
 
 Hiérarchie propre avec parents dédiés (rooms, ennemis, pièces)
 
-👾 Ennemis & objets
+# 👾 Ennemis & objets
 
 Placement aléatoire d’ennemis selon des positions prédéfinies
 
@@ -39,7 +39,7 @@ Placement de pièces (coins) dans les salles compatibles
 
 Suppression des positions utilisées pour éviter les doublons
 
-🖥️ Interface utilisateur (UI)
+# 🖥️ Interface utilisateur (UI)
 
 Une interface permet de modifier en temps réel :
 
@@ -53,7 +53,7 @@ Seed de génération
 
 ➡️ Un bouton permet de régénérer le donjon après chaque modification, sans relancer la scène.
 
-🎥 Déplacement & caméra
+# 🎥 Déplacement & caméra
 
 Le “joueur” est une caméra en free-fly
 
@@ -65,7 +65,7 @@ Vitesse ajustable avec la molette
 
 Curseur libre (mode outil / debug)
 
-🧠 Architecture du projet
+# 🧠 Architecture du projet
 Scripts principaux
 DungeonGenerator
 
