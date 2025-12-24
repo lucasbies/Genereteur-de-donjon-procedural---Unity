@@ -25,25 +25,25 @@ Le générateur crée dynamiquement des donjons composés de salles interconnect
 ## Architecture du projet
 
 - **DungeonGenerator**  
-  Orchestrateur principal de la génération (seed, taille, règles globales).
+  Classe centrale du système de génération.  
+  Gère l’ensemble du processus : seed, nombre de salles, placement procédural, gestion des portes disponibles, génération de la salle de départ et de la salle de fin, ainsi que le spawn des ennemis et des pièces.  
+  Assure également la détection des collisions entre salles à l’aide de Bounding Boxes (BoxCollider).
 
-- **Room / RoomData**  
-  Représentation logique des salles (type, connexions, probabilités).
+- **DataRoom**  
+  Représente une salle individuelle du donjon.  
+  Contient les données propres à chaque salle : positions des portes, positions possibles pour les ennemis et les pièces, BoxCollider servant de volume de collision, ainsi que la logique de spawn des entités.
 
-- **RoomPlacer**  
-  Placement spatial des salles et gestion des connexions via portes.
+- **RoomInstance**  
+  Structure de données utilisée pour définir les prefabs de salles et leur probabilité d’apparition lors de la génération procédurale.
 
-- **CollisionChecker**  
-  Vérification des collisions entre salles à l’aide de Bounding Boxes.
-
-- **ContentSpawner**  
-  Placement procédural des ennemis et des pièces dans les salles valides.
-
-- **UIController**  
-  Gestion de l’interface utilisateur (paramètres, génération, seed).
+- **ManagerUI**  
+  Gère l’interface utilisateur.  
+  Permet de modifier dynamiquement les paramètres de génération (nombre de salles, ennemis, pièces, seed) et de régénérer le donjon après modification.
 
 - **FreeFlyCamera**  
-  Caméra de navigation libre pour l’exploration et le debug.
+  Caméra de déplacement libre utilisée comme joueur.  
+  Sert à l’exploration du donjon et au debug, avec contrôle de la rotation, de la vitesse et du déplacement en 3D.
+
 
 ---
 
