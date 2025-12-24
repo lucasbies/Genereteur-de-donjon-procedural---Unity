@@ -1,0 +1,13 @@
+fileFormatVersion: 2
+guid: 2d6a9cdbb19430f40ab48e467dfd15b9
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - _boundsColliderRoom: {instanceID: 0}
+  - _coins: {fileID: 658964506127248861, guid: 591819ca3c3280646b5b029643dfd258, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
