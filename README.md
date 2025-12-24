@@ -1,168 +1,113 @@
-# 🧱 Procedural Dungeon Generator – Unity
-## 📌 Description
+# Procedural Dungeon Generator – Unity
 
-Ce projet est un générateur procédural de donjons réalisé avec Unity et C#.
-Il permet de générer dynamiquement un donjon composé de salles connectées par des portes, avec une gestion des collisions via des Bounding Boxes, un système de probabilités de salles, ainsi qu’une interface utilisateur interactive permettant de modifier les paramètres de génération en temps réel.
+## Description
 
-Le projet a été conçu comme un outil de génération plutôt qu’un jeu final.
+Ce projet est un **outil de génération procédurale de donjons** développé en **C# avec Unity 6000.2.7f2**.  
+Il ne s’agit pas d’un jeu finalisé, mais d’un **système technique autonome** visant à explorer et maîtriser les principes de génération procédurale, la structuration d’un projet Unity et la gestion algorithmique de niveaux.
 
-## 🎮 Fonctionnalités principales
-### 🏗️ Génération procédurale
+Le générateur crée dynamiquement des donjons composés de salles interconnectées, avec des règles de placement, de probabilités et de reproductibilité via seed.
 
-Placement de salles à partir de portes disponibles
+---
 
-Vérification des collisions entre salles grâce aux Bounds (BoxCollider)
+## Fonctionnalités principales
 
-Génération contrôlée par un seed
+- Génération procédurale de donjons composés de salles reliées par des portes
+- Détection de collisions sans moteur physique (Bounding Boxes / BoxCollider)
+- Génération reproductible via système de **seed**
+- Probabilités pondérées pour l’apparition des différents types de salles
+- Gestion d’une **salle de départ** et d’une **salle de fin**
+- Placement procédural d’ennemis et de pièces
+- Interface utilisateur pour modifier les paramètres et régénérer le donjon en temps réel
+- Caméra **free-fly** dédiée à l’exploration et au debug
 
-Système de probabilité pondérée pour le choix des salles
+---
 
-Salle de départ et salle de fin
+## Architecture du projet
 
-Réactivation automatique des murs sur les portes inutilisées
+- **DungeonGenerator**  
+  Orchestrateur principal de la génération (seed, taille, règles globales).
 
-### 🎨 Visuel & structure
+- **Room / RoomData**  
+  Représentation logique des salles (type, connexions, probabilités).
 
-Couleurs différentes pour distinguer les types de salles
+- **RoomPlacer**  
+  Placement spatial des salles et gestion des connexions via portes.
 
-Sols et murs ajoutés pour une meilleure lisibilité du donjon
+- **CollisionChecker**  
+  Vérification des collisions entre salles à l’aide de Bounding Boxes.
 
-Visualisation des Bounding Boxes via OnDrawGizmosSelected
+- **ContentSpawner**  
+  Placement procédural des ennemis et des pièces dans les salles valides.
 
-Hiérarchie propre avec parents dédiés (rooms, ennemis, pièces)
+- **UIController**  
+  Gestion de l’interface utilisateur (paramètres, génération, seed).
 
-### 👾 Ennemis & objets
+- **FreeFlyCamera**  
+  Caméra de navigation libre pour l’exploration et le debug.
 
-Placement aléatoire d’ennemis selon des positions prédéfinies
+---
 
-Placement de pièces (coins) dans les salles compatibles
+## Technologies utilisées
 
-Suppression des positions utilisées pour éviter les doublons
+- **Unity 6000.2.7f2**
+- **C#**
+- Génération procédurale
+- Algorithmique spatiale
+- UI Unity (Canvas)
+- Debug visuel et outils internes
 
-### 🖥️ Interface utilisateur (UI)
+---
 
-Une interface permet de modifier en temps réel :
+## Installation / Lancer le projet
 
-Nombre de salles
+1. Cloner le dépôt GitHub
+2. Ouvrir le projet avec **Unity Hub**
+3. Sélectionner la version **Unity 6000.2.7f2**
+4. Ouvrir la scène principale
+5. Lancer le projet depuis l’éditeur
 
-Nombre d’ennemis
+---
 
-Nombre de pièces
+## Utilisation / Contrôles
 
-Seed de génération
+### Interface utilisateur
+- Modification des paramètres de génération (seed, nombre de salles, probabilités)
+- Bouton de régénération du donjon en temps réel
 
-➡️ Un bouton permet de régénérer le donjon après chaque modification, sans relancer la scène.
+### Caméra free-fly
+- Déplacement libre pour explorer le donjon généré
+- Utilisée principalement pour le debug et l’analyse du layout
 
-### 🎥 Déplacement & caméra
+---
 
-Le “joueur” est une caméra en free-fly
+## Objectifs du projet
 
-Déplacement libre en 3D (ZQSD / WASD, espace, ctrl)
+- Comprendre et implémenter un **système de génération procédurale**
+- Structurer un projet Unity orienté outil technique
+- Gérer des collisions sans dépendre du moteur physique
+- Mettre en place des systèmes probabilistes contrôlés
+- Développer des outils de debug et de paramétrage en temps réel
 
-Rotation à la souris (clic droit)
+---
 
-Vitesse ajustable avec la molette
+## Améliorations possibles
 
-Curseur libre (mode outil / debug)
+- Génération de layouts non orthogonaux
+- Systèmes de contraintes avancées entre salles
+- Sauvegarde / chargement de configurations
+- Visualisation plus poussée des données de génération
+- Intégration dans un projet de jeu complet
 
-### 🧠 Architecture du projet
-Scripts principaux
-DungeonGenerator
+---
 
-Cœur du système de génération
+## Aperçu
 
-Gestion du seed
+*(Section dédiée à l’ajout de captures d’écran ou GIFs)*
 
-Placement des salles
+---
 
-Vérification des collisions
+## Auteur
 
-Génération des ennemis et des pièces
-
-Nettoyage et régénération du donjon
-
-DataRoom
-
-Données propres à chaque salle :
-
-Portes
-
-Positions d’ennemis
-
-Positions de pièces
-
-BoxCollider utilisé comme bounds
-
-Spawn des ennemis et des pièces
-
-Dessin des bounds avec Gizmos
-
-RoomInstance
-
-Structure de données contenant :
-
-Le prefab de la salle
-
-Sa probabilité d’apparition
-
-ManagerUI
-
-Gestion de l’interface utilisateur
-
-Synchronisation sliders ↔ valeurs du générateur
-
-Mise à jour du texte en temps réel
-
-FreeFlyCamera
-
-Déplacement libre de la caméra
-
-Rotation à la souris
-
-Contrôle de la vitesse de déplacement
-
-## 🛠️ Technologies utilisées
-
-Unity
-
-C#
-
-Input System
-
-TextMeshPro
-
-Gizmos (debug visuel)
-
-Programmation orientée données
-
-## 📷 Aperçu
-
-(Tu peux ajouter ici des captures d’écran du donjon généré, des gizmos ou de l’UI)
-
-## 🚀 Objectifs du projet
-
-Comprendre et maîtriser la génération procédurale
-
-Travailler la détection de collisions sans physique
-
-Structurer un projet Unity de manière propre et lisible
-
-Créer un outil modulaire et facilement extensible
-
-## 📌 Améliorations possibles
-
-Génération de couloirs
-
-Rotation plus avancée des salles
-
-Sauvegarde des seeds intéressants
-
-Ajout de règles de génération (poids, distance, difficulté)
-
-Intégration d’un vrai player
-
-## 👤 Auteur
-
-Lucas
-Étudiant en informatique – BUT
-Projet personnel Unity / Génération procédurale
+Lucas  
+Étudiant en BUT Informatique – Développement / Game Development  
+Portfolio GitHub
