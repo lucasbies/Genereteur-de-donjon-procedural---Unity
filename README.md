@@ -1,4 +1,4 @@
-#### 🧱 Procedural Dungeon Generator – Unity
+# 🧱 Procedural Dungeon Generator – Unity
 ## 📌 Description
 
 Ce projet est un générateur procédural de donjons réalisé avec Unity et C#.
@@ -7,7 +7,7 @@ Il permet de générer dynamiquement un donjon composé de salles connectées pa
 Le projet a été conçu comme un outil de génération plutôt qu’un jeu final.
 
 ## 🎮 Fonctionnalités principales
-# 🏗️ Génération procédurale
+### 🏗️ Génération procédurale
 
 Placement de salles à partir de portes disponibles
 
@@ -21,7 +21,7 @@ Salle de départ et salle de fin
 
 Réactivation automatique des murs sur les portes inutilisées
 
-# 🎨 Visuel & structure
+### 🎨 Visuel & structure
 
 Couleurs différentes pour distinguer les types de salles
 
@@ -31,7 +31,7 @@ Visualisation des Bounding Boxes via OnDrawGizmosSelected
 
 Hiérarchie propre avec parents dédiés (rooms, ennemis, pièces)
 
-# 👾 Ennemis & objets
+### 👾 Ennemis & objets
 
 Placement aléatoire d’ennemis selon des positions prédéfinies
 
@@ -39,7 +39,7 @@ Placement de pièces (coins) dans les salles compatibles
 
 Suppression des positions utilisées pour éviter les doublons
 
-# 🖥️ Interface utilisateur (UI)
+### 🖥️ Interface utilisateur (UI)
 
 Une interface permet de modifier en temps réel :
 
@@ -53,7 +53,7 @@ Seed de génération
 
 ➡️ Un bouton permet de régénérer le donjon après chaque modification, sans relancer la scène.
 
-# 🎥 Déplacement & caméra
+### 🎥 Déplacement & caméra
 
 Le “joueur” est une caméra en free-fly
 
@@ -65,7 +65,7 @@ Vitesse ajustable avec la molette
 
 Curseur libre (mode outil / debug)
 
-# 🧠 Architecture du projet
+### 🧠 Architecture du projet
 Scripts principaux
 DungeonGenerator
 
@@ -121,7 +121,7 @@ Rotation à la souris
 
 Contrôle de la vitesse de déplacement
 
-🛠️ Technologies utilisées
+## 🛠️ Technologies utilisées
 
 Unity
 
@@ -135,11 +135,11 @@ Gizmos (debug visuel)
 
 Programmation orientée données
 
-📷 Aperçu
+## 📷 Aperçu
 
 (Tu peux ajouter ici des captures d’écran du donjon généré, des gizmos ou de l’UI)
 
-🚀 Objectifs du projet
+## 🚀 Objectifs du projet
 
 Comprendre et maîtriser la génération procédurale
 
@@ -149,7 +149,7 @@ Structurer un projet Unity de manière propre et lisible
 
 Créer un outil modulaire et facilement extensible
 
-📌 Améliorations possibles
+## 📌 Améliorations possibles
 
 Génération de couloirs
 
@@ -161,7 +161,7 @@ Ajout de règles de génération (poids, distance, difficulté)
 
 Intégration d’un vrai player
 
-👤 Auteur
+## 👤 Auteur
 
 Lucas
 Étudiant en informatique – BUT
